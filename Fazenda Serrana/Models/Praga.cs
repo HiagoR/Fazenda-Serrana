@@ -16,7 +16,7 @@ namespace Fazenda_Serrana.Models
         public virtual int IdPragaAgrotoxico { get; set; }
         public virtual IList<PragaAgrotoxico> AgrotoxicosPraga { get; set; }
         public virtual int IdCulturaPraga { get; set; }
-        public virtual IList<CulturaPraga> CulturasPraga { get; set; }
+        public virtual IList<CulturaPraga> PragaCultura { get; set; }
 
     }
 }

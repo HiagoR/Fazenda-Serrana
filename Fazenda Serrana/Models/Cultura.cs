@@ -13,6 +13,8 @@ namespace Fazenda_Serrana.Models
 
         public virtual AreaCultura CulturaArea { get; set; }
         public virtual int IdCulturaArea { get; set; }
+        public virtual int IdCulturaPraga { get; set; }
+        public virtual IList<CulturaPraga> CulturasPraga { get; set; }
 
     }
 }

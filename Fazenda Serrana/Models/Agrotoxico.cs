@@ -11,8 +11,12 @@ namespace Fazenda_Serrana.Models
         public string Nome { get; set; }
         public double QtdDisponivel { get; set; }
         public string UnidadeMedida { get; set; }
-
+        public virtual int IdAplicacao { get; set; }
+        public Aplicacao Aplicacao { get; set; }
         public virtual int IdPragaAgrotoxico { get; set; }
         public virtual IList<PragaAgrotoxico> PragasAgrotoxicos { get; set; }
+
+
+
     }
 }
