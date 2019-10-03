@@ -21,7 +21,7 @@ namespace Fazenda_Serrana.Models.FluentMap
                 .IsRequired();
             builder.Property(a => a.Tipo)
                 .IsRequired()
-                .HasColumnType("bit")
+                .HasColumnType("char")
                 .HasColumnName("Tipo");
             builder.Property(a => a.DataAplicacao)
                 .IsRequired()
@@ -29,13 +29,13 @@ namespace Fazenda_Serrana.Models.FluentMap
                 .HasColumnName("DtAplicacao");
             builder.Property(a => a.QtdAplicada)
                 .IsRequired()
-                .HasColumnType("number")
+                .HasColumnType("int")
                 .HasColumnName("QtdAplicada");
 
 
-            builder.HasOne(a => a.Agrotoxico)
+            /*builder.HasOne(a => a.Agrotoxico)
                 .WithOne(f => f.Aplicacao)
-                .HasForeignKey<Aplicacao>(k => k.IdAgrotoxico);
+                .HasForeignKey<Agrotoxico>(k => k.IdAplicacao);*/
 
 
         }

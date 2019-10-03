@@ -12,32 +12,25 @@ namespace Fazenda_Serrana.Models.FluentMap
         public void Configure(EntityTypeBuilder<AreaCultura> builder)
         {
 
-
-
+            builder.ToTable("TB_AREA_CULTURA");
             builder.HasKey(areaCulturaKey => new
             {
-                areaCulturaKey.IdCultura,
-                areaCulturaKey.IdArea
+                areaCulturaKey.CulturaId,
+                areaCulturaKey.AreaId
             }
             );
             builder.Property(f => f.DataInicio)
-             .IsRequired()
-             .HasColumnType("date")
-             .HasColumnName("DtInicio") ;
+                .IsRequired()
+                .HasColumnType("date")
+                .HasColumnName("DtInicio");
 
+            builder.HasOne(ef => ef.Area)
+                .WithOne(e => e.AreaCultura)
+                .HasForeignKey<Area>(sc => sc.AreaCulturaId);
 
-
-
-
-
-
-            builder.HasOne<Area>(ef => ef.Area)
-             .WithOne(e => e.AreaCultura)
-             .HasForeignKey<AreaCultura>(sc => sc.IdArea);
-
-            builder.HasOne<Cultura>(ef => ef.Cultura)
-             .WithOne(e => e.CulturaArea)
-             .HasForeignKey<AreaCultura>(sc => sc.IdCultura);
+            builder.HasOne(ef => ef.Cultura)
+                .WithOne(e => e.CulturaArea)
+                .HasForeignKey<Cultura>(sc => sc.CulturaAreaId);
         }
     }
 }

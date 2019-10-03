@@ -13,9 +13,9 @@ namespace Fazenda_Serrana.Models
         public DateTime DataAplicacao { get; set; }
         public double QtdAplicada { get; set; }
 
-        public virtual int IdArea { get; set; }
+        public int AreaId { get; set; }
         public virtual Area Area { get; set; }
-        public virtual int IdAgrotoxico { get; set; }
+        public int AgrotoxicoId { get; set; }
         public virtual Agrotoxico Agrotoxico { get; set; }
 
     }

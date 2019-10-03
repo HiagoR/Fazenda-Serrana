@@ -25,13 +25,13 @@ namespace Fazenda_Serrana.Models.FluentMap
                  .WithMany(f => f.AreasResponsaveis)
                  .HasForeignKey(k => k.IdFuncionario);
 
-            builder.HasOne(a => a.AreaCultura)
-                  .WithOne(f => f.Area)
-                  .HasForeignKey<AreaCultura>(k => k.IdArea);
+            //builder.HasOne(a => a.AreaCultura)
+            //      .WithOne(f => f.Area)
+            //      .HasForeignKey<AreaCultura>(k => k.IdArea);
             
             builder.HasOne(a => a.Aplicacao)
                   .WithOne(f => f.Area)
-                  .HasForeignKey<Aplicacao>(k => k.IdArea);
+                  .HasForeignKey<Aplicacao>(k => k.AreaId);
 
 
 

@@ -19,6 +19,7 @@ namespace Fazenda_Serrana.Models.FluentMap
             builder.Property(a => a.Id)
                 .ValueGeneratedNever()
                 .IsRequired();
+            
             builder.Property(a => a.Nome)
                 .IsRequired()
                 .HasColumnType("varchar(200)")
@@ -32,6 +33,9 @@ namespace Fazenda_Serrana.Models.FluentMap
                 .HasColumnType("varchar(200)")
                 .HasColumnName("UnidadeMedida");
 
+            builder.HasOne(a => a.Aplicacao)
+                .WithOne(a => a.Agrotoxico)
+                .HasForeignKey<Aplicacao>(k => k.AgrotoxicoId);
 
         }
     }

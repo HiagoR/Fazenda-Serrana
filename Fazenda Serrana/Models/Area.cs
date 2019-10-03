@@ -11,10 +11,10 @@ namespace Fazenda_Serrana.Models
         public double Tamanho { get; set; }
 
         public virtual AreaCultura AreaCultura { get; set; }
-        public virtual int IdAreaCultura { get; set; }
+        public virtual int AreaCulturaId { get; set; }
         public virtual Funcionario Funcionario { get; set; }
         public virtual int IdFuncionario { get; set; }
         public virtual Aplicacao Aplicacao { get; set; }
-        public virtual int IdAplicacao { get; set; }
+        //public virtual int IdAplicacao { get; set; }
     }
 }
